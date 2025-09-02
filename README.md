@@ -1,1 +1,1 @@
-# papu-tecnolog-a-y-pintura
+# Fabrica de Telas | Proyecto Interdisiplinario
