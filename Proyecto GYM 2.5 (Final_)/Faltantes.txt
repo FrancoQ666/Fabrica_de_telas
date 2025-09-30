@@ -1,0 +1,6 @@
+Suscripciones = basico, avanzado y premium
+
+Metodo de pago para las Suscripciones
+
+Lista de ejemplo de mrd del buscador
+

@@ -1,0 +1,61 @@
+import funciones
+
+def menu_compras():
+    print("Bienvenido a la zona de compras!")
+    print("¿Qué desea comprar?")
+    print("1. Suplementos y Nutrición")
+    print("2. Ropa y Accesorios Deportivos")
+    print("3. Artículos de uso personal")
+    print("4. Equipamiento para el hogar")
+    print("5. Salir")
+    selec1 = int(input("elija:"))
+
+    if selec1 == 1:
+        print("Suplementos y Nutrición:")
+        print("bebidas deportivas 1")
+        print("batidos de proteínas 2")
+        print("barras energéticas 3")
+        print("frutas (plátanos, manzanas) 4")
+        print("frutos secos 5")
+        print("yogur 6")
+        print("agua. 7")
+        print("Bebidas energéticas 8")
+        print("Aminoácidos 9")
+        print("Pre-entrenos 10")
+        print("Quemadores de grasa 11")
+        print("Multivitamínicos 12")
+        print("Barras energéticas 13")
+        print("Bebidas isotónicas y energizantes 14")
+        selec2 = int(input("elija:"))
+        print("articulo " + selec2 +" comprado!")
+
+    if selec1 == 2:
+        print("Ropa y Accesorios Deportivos:")
+        print("Remeras y musculosas deportivas 1")
+        print("Calzas y shorts 2")
+        print("Guantes de entrenamiento 3")
+        print("Cinturones de fuerza (powerlifting) 4")
+        print("Tobilleras y muñequeras 5")
+        print("Gorras y cintas de cabeza 6")
+        selec2 == int(input("elija:"))
+        print("articulo " + selec2 +" comprado!")
+
+    if selec1 == 3:
+        print("Artículos de uso personal:")
+        print("Toallas 1")
+        print("Botellas reutilizables 2")
+        print("Shakers (mezcladores para batidos) 3")
+        print("Jabón, shampoo y desodorante 4")
+        print("Candados para lockers 5")
+        selec2 == int(input("elija:"))
+        print("articulo " + selec2 +" comprado!")
+
+    if selec1 == 4:
+        print("Equipamiento para el hogar:")
+        print("Bandas elásticas 1")
+        print("Colchonetas 2")
+        print("Mancuernas pequeñas 3")
+        print("Sogas para saltar 4")
+        print("Mini pesas rusas 5")
+        selec2 == int(input("elija:"))
+        print("articulo " + selec2 +" comprado!")
