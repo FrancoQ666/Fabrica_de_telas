@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Operarios - Fábrica Alcoyana</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Fábrica de Telas Alcoyana - Operarios</h1>
+        <div class="user-info">
+            <span>Operario: Juan Pérez</span>
+            <a href="index.html" class="logout">Salir</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Registro de Producción -->
+        <div class="card">
+            <h2>Registro de Producción Diaria</h2>
+            <form id="formProduccion">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="maquina">Máquina</label>
+                        <select id="maquina" required>
+                            <option value="">Seleccionar máquina</option>
+                            <option value="M001">Máquina 001 - Telar Principal</option>
+                            <option value="M002">Máquina 002 - Telar Secundario</option>
+                            <option value="M003">Máquina 003 - Telar Auxiliar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoTela">Tipo de Tela</label>
+                        <select id="tipoTela" required>
+                            <option value="">Seleccionar tipo</option>
+                            <option value="algodon">Algodón</option>
+                            <option value="poliester">Poliéster</option>
+                            <option value="lana">Lana</option>
+                            <option value="mezcla">Mezcla</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad Producida (metros)</label>
+                        <input type="number" id="cantidad" min="0" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="turno">Turno</label>
+                        <select id="turno" required>
+                            <option value="">Seleccionar turno</option>
+                            <option value="mañana">Mañana (06:00 - 14:00)</option>
+                            <option value="tarde">Tarde (14:00 - 22:00)</option>
+                            <option value="noche">Noche (22:00 - 06:00)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrar Producción</button>
+            </form>
+        </div>
+
+        <!-- Reporte de Fallas -->
+        <div class="card">
+            <h2>Reporte de Fallas o Interrupciones</h2>
+            <form id="formFallas">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="maquinaFalla">Máquina</label>
+                        <select id="maquinaFalla" required>
+                            <option value="">Seleccionar máquina</option>
+                            <option value="M001">Máquina 001</option>
+                            <option value="M002">Máquina 002</option>
+                            <option value="M003">Máquina 003</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoFalla">Tipo de Falla</label>
+                        <select id="tipoFalla" required>
+                            <option value="">Seleccionar tipo</option>
+                            <option value="mecanica">Falla Mecánica</option>
+                            <option value="electrica">Falla Eléctrica</option>
+                            <option value="material">Problema con Material</option>
+                            <option value="calidad">Problema de Calidad</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcionFalla">Descripción de la Falla</label>
+                    <textarea id="descripcionFalla" rows="4" required placeholder="Describe el problema detalladamente..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-secondary">Reportar Falla</button>
+            </form>
+        </div>
+
+        <!-- Visualización de Metas -->
+        <div class="card">
+            <h2>Metas Diarias</h2>
+            <div class="metas-container">
+                <div class="meta-item">
+                    <div class="meta-label">Meta del Día</div>
+                    <div class="meta-value">500 metros</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Producción Actual</div>
+                    <div class="meta-value">320 metros</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Progreso</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 64%"></div>
+                    </div>
+                    <div class="meta-value">64%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historial de Producción -->
+        <div class="card">
+            <h2>Historial de Producción Hoy</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Máquina</th>
+                        <th>Tipo de Tela</th>
+                        <th>Cantidad (m)</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProduccion">
+                    <tr>
+                        <td>08:30</td>
+                        <td>M001</td>
+                        <td>Algodón</td>
+                        <td>120</td>
+                        <td><span class="badge badge-success">Completado</span></td>
+                    </tr>
+                    <tr>
+                        <td>10:15</td>
+                        <td>M002</td>
+                        <td>Poliéster</td>
+                        <td>200</td>
+                        <td><span class="badge badge-success">Completado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="JS/operario.js"></script>
+</body>
+</html>
