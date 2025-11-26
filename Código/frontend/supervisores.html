@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Supervisor - Fábrica Alcoyana</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Panel de Supervisor</h1>
+        <div class="user-info">
+            <span>Supervisor: Juan Pérez</span>
+            <a href="#" class="logout">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Sección de Metas -->
+        <div class="metas-container">
+            <div class="meta-item">
+                <span class="meta-label">Producción Diaria</span>
+                <span class="meta-value">85%</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%"></div>
+                </div>
+                <span class="badge badge-success">En Meta</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Calidad</span>
+                <span class="meta-value">92%</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 92%"></div>
+                </div>
+                <span class="badge badge-success">En Meta</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Eficiencia</span>
+                <span class="meta-value">78%</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 78%"></div>
+                </div>
+                <span class="badge badge-warning">Atención</span>
+            </div>
+        </div>
+
+        <!-- Sección de Producción en Tiempo Real -->
+        <div class="card">
+            <h2>Producción en Tiempo Real</h2>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Línea</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Estado</th>
+                            <th>Operario</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productionTable">
+                        <!-- Datos se cargarán vía JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sección de Alertas -->
+        <div class="card">
+            <h2>Alertas del Sistema</h2>
+            <div class="alerts-container">
+                <div class="alert-item">
+                    <span class="badge badge-warning">Bajo Stock</span>
+                    <p>Materia prima X: 150 unidades (Umbral: 200)</p>
+                </div>
+                <div class="alert-item">
+                    <span class="badge badge-error">Mantenimiento</span>
+                    <p>Máquina 001 requiere mantenimiento preventivo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Controles de Calidad -->
+        <div class="card">
+            <h2>Controles de Calidad</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="qualityFilter">Filtrar por:</label>
+                    <select id="qualityFilter" class="form-control">
+                        <option value="all">Todos</option>
+                        <option value="approved">Aprobados</option>
+                        <option value="rejected">Rechazados</option>
+                        <option value="pending">Pendientes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateRange">Rango de Fecha:</label>
+                    <input type="date" id="dateRange" class="form-control">
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Resultado</th>
+                            <th>Fecha</th>
+                            <th>Inspector</th>
+                        </tr>
+                    </thead>
+                    <tbody id="qualityTable">
+                        <!-- Datos se cargarán vía JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="JS/supervisores.js"></script>
+</body>
+</html>
